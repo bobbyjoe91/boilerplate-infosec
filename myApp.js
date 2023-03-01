@@ -59,6 +59,11 @@ app.use(
   helmet.frameguard({ action: 'deny' })
 );
 
+// add XSS filter
+app.use(
+  helmet.xssFilter()
+);
+
 app.use(express.static('public'));
 app.disable('strict-transport-security');
 
