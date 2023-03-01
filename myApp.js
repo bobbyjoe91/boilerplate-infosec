@@ -64,6 +64,11 @@ app.use(
   helmet.xssFilter()
 );
 
+// avoid response MIME type sniffing
+app.use(
+  helmet.noSniff()
+);
+
 app.use(express.static('public'));
 app.disable('strict-transport-security');
 
