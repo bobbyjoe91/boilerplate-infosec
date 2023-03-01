@@ -69,6 +69,11 @@ app.use(
   helmet.noSniff()
 );
 
+// avoid IE to open untrusted HTML
+app.use(
+  helmet.ieNoOpen()
+);
+
 app.use(express.static('public'));
 app.disable('strict-transport-security');
 
