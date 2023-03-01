@@ -74,6 +74,15 @@ app.use(
   helmet.ieNoOpen()
 );
 
+// force use HTTPS
+const hstsOptions = {
+  force: true,
+  maxAge: 90 * 24 * 3600,
+};
+app.use(
+  helmet.hsts(hstsOptions)
+);
+
 app.use(express.static('public'));
 app.disable('strict-transport-security');
 
