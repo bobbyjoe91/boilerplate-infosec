@@ -51,7 +51,13 @@ module.exports = app;
 const api = require('./server.js');
 const helmet = require("helmet");
 
+// remove x-powered-by
 app.use(helmet.hidePoweredBy());
+
+// prevent clickjacking
+app.use(
+  helmet.frameguard({ action: 'deny' })
+);
 
 app.use(express.static('public'));
 app.disable('strict-transport-security');
