@@ -65,6 +65,9 @@ app.use(function (req, res, next) {
   res.status(404).type("txt").send("Not Found");
 });
 
+// 2. Bcrypt tutorials
+const bcrypt = require('bcrypt');
+
 module.exports = app;
 
 /********************************************

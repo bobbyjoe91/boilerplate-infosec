@@ -113,9 +113,6 @@ app.use(
   helmet.contentSecurityPolicy(cspOption)
 );
 
-// 2. Bcrypt tutorials
-const bcrypt = require('bcrypt');
-
 app.use(express.static('public'));
 app.disable('strict-transport-security');
 
