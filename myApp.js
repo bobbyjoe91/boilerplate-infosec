@@ -88,6 +88,11 @@ app.use(
   helmet.dnsPrefetchControl()
 );
 
+// disable cache
+app.use(
+  helmet.noCache()
+);
+
 app.use(express.static('public'));
 app.disable('strict-transport-security');
 
