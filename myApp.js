@@ -83,6 +83,11 @@ app.use(
   helmet.hsts(hstsOptions)
 );
 
+// disable DNS prefetch
+app.use(
+  helmet.dnsPrefetchControl()
+);
+
 app.use(express.static('public'));
 app.disable('strict-transport-security');
 
