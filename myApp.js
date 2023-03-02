@@ -93,6 +93,17 @@ app.use(
   helmet.noCache()
 );
 
+// apply CSP
+const cspOption = {
+  directives: {
+    defaultSrc: ["'self'"],
+    scriptSrc: ['trusted-cdn.com', "'self'",],
+  },
+};
+app.use(
+  helmet.contentSecurityPolicy(cspOption)
+);
+
 app.use(express.static('public'));
 app.disable('strict-transport-security');
 
