@@ -97,7 +97,7 @@ app.use(
 const cspOption = {
   directives: {
     defaultSrc: ["'self'"],
-    scriptSrc: ['trusted-cdn.com', "'self'",],
+    scriptSrc: ["'self'", 'trusted-cdn.com'],
   },
 };
 app.use(
