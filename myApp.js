@@ -56,6 +56,8 @@ const someOtherPlaintextPassword = 'pass123';
 
 module.exports = app;
 const api = require('./server.js');
+
+// 1. Helmet tutorials
 const helmet = require("helmet");
 
 // remove x-powered-by
@@ -110,6 +112,9 @@ const cspOption = {
 app.use(
   helmet.contentSecurityPolicy(cspOption)
 );
+
+// 2. Bcrypt tutorials
+const bcrypt = require('bcrypt');
 
 app.use(express.static('public'));
 app.disable('strict-transport-security');
